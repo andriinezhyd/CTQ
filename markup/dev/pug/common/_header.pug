@@ -1,0 +1,35 @@
+header#header
+	.header-holder
+		.top-header
+			include ../template/_social
+			include ../template/_buttons-header
+			ul.btn-holder
+				li: a.btn.btn-join(href="#") join
+				li: a.btn.btn-sign(href="#") sign in
+				li: a.btn.btn-search(href="#"): i.icon-search
+			//- ul.login-menu
+			//- 	li: a(href="#") LOGOUT
+			//- 	li: a(href="#") MY PROFILE
+			//- 	li: a(href="#") MY DASHBOARD
+		.main-header
+			strong.logo: a(href="#")
+				img(src="images/logo.svg" alt="Center For Teaching Quality" width="233" height="65")
+			strong.logo-sticky: a(href="#")
+				img(src="images/logo-small.svg" alt="Center For Teaching Quality" width="47" height="25")
+			nav#nav
+				a(href="#").nav-opener: span Open
+				.nav-drop
+					//- - var curentClass = 'home' //- past in curent page
+					.box-search
+						form
+							input.form-control(type='search', placeholder='Search...')
+							button(type='submit'): i.icon-search
+					.menu-main
+						ul
+							li(class={active: curentClass === 'about'}): a(href="#") ABOUT CTQ
+							li(class={active: curentClass === 'ourWork'}): a(href="#") OUR WORK
+							li(class={active: curentClass === 'services'}): a(href="#") OUR SERVICES
+							li(class={active: curentClass === 'blog'}): a(href="#") BLOG
+						include ../template/_buttons-header
+						include ../template/_contacts
+

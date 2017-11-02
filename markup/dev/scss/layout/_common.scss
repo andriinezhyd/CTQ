@@ -1,0 +1,22 @@
+#wrapper {
+  width: 100%;
+  overflow: hidden;
+  background: $base-background-color;
+}
+
+.container {
+  @extend %clearfix;
+  max-width: $max-width-center-container;
+  padding: $padding-container;
+  margin: 0 auto;
+}
+
+.hidden {
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	text-indent: -9999px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
