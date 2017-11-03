@@ -1,3 +1,101 @@
 #footer {
-  background: $base-background-footer;
+	background: $base-background-footer;
+	color: $white;
+	padding-top: 35px;
+
+	.main-footer {
+		margin: 0 -15px;
+		padding-bottom: 90px;
+
+		.box-holder {
+			display: inline-block;
+			vertical-align: top;
+			margin-right: -4px;
+			font-size: 21px;
+			font-weight: $light;
+			line-height: 25px;
+			width: 100%;
+			padding: 0 15px;
+			margin-bottom: 20px;
+
+			@include media('>=phone') {
+				width: 50%;
+			}
+
+			@include media('>=desktop') {
+				width: 33.3%;
+			}
+
+			h4 {
+				margin-bottom: 30px;
+			}
+
+			a {
+				color: $white;
+			}
+
+			.date {
+				font-weight: $bold;
+				font-size: 13px;
+			}
+			
+			.contact-links {
+				font-style: normal;
+				a {
+					display: inline-block;
+				}
+			}
+		}
+	}
+
+	.bottom-footer {
+		display: block;
+		background: $yellow;
+		color: $gray-dark;
+		margin: 0 -9999px;
+		padding: 0 9999px;
+
+		.copyright {
+			@extend %listreset;
+
+			text-align: center;
+			
+			li {
+				display: inline-block;
+				font-size: 14px;
+				padding: 18px 0;
+
+				&:last-child a{
+					border-right: none;
+				}
+
+				a {
+					padding: 0 15px;
+					color: $gray-dark;
+					
+					@include media('>=phone') {
+						border-right: 1px solid $gray-dark;
+					}
+
+					&:hover {
+						@include animate(color);
+
+						color: lighten($gray-dark, 10%);
+					}
+				}
+			}
+		}
+	}
+}
+
+.yellow-color {
+	color: $yellow !important;
+}
+
+.link {
+	display: block !important;
+
+	&:hover {
+		opacity: .8;
+	}
 }

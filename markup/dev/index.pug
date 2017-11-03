@@ -9,28 +9,30 @@ include pug/common/_head
 					a.btn(href="#") ABOUT CALL TO ACTION
 			section.box-posts
 				.container
-					+article("OUR FUNDERS", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, duis aute irure dolor.")
-					+article("OUR CLIENTS", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, duis aute irure dolor.")
-					+article("OUR PARTNERS", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, duis aute irure dolor.")
-					+article("OUR BOOKS", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, duis aute irure dolor.")
+					.box-holder
+						+article("OUR FUNDERS", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, duis aute irure dolor.")
+						+article("OUR CLIENTS", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, duis aute irure dolor.")
+						+article("OUR PARTNERS", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, duis aute irure dolor.")
+						+article("OUR BOOKS", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, duis aute irure dolor.")
 			section.meet-section(style="background-image: url(images/bg-img-02.jpg);")
 				.img-overlay
 					.container
 						h3.title.underline.line-center.line-white Meet the CTQ Team
 						p Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 						a.btn.more(href="#") LEARN MORE
-			section
+			section.history
 				.container
 					.image
 						img(src="images/man-01.png" alt="image description")
 					.text
 						p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
 						a.btn(href="#") VIEW COMPLETE HISTORY
-			section
+			section.up-to-date(style="background-image: url(images/bg-img-03.jpg);")
 				.container
 					h1 Stay up-to-date with CTQ
 					.form-email
 						form
-							input.form-control(type='search', placeholder='Enter your email')
-							button(type='submit') SUBSCRIBE
+							.input-holder
+								input.form-control(type='search', placeholder='Enter your email')
+								button(type='submit') SUBSCRIBE
 		include pug/common/_footer

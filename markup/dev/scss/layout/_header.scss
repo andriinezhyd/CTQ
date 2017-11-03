@@ -68,23 +68,25 @@
   &:after,
   span {
     @include animate(transform);
-    background: $black;
+    background: $gray;
     position: absolute;
     top: 16px;
-    left: 15%;
-    right: 15%;
-    height: 3px;
+    left: 0;
+    right: 0;
+    height: 5px;
     margin-top: -2px; 
   }
 
   &:before,
   &:after {
     content: '';
-    top: 10px;
+    top: 6px;
   }
 
   &:after {
-    top: 22px;
+    top: 26px;
+    width: 50%;
+    left: auto;
   }
 
   &:hover {
@@ -100,12 +102,185 @@
     &:before {
       transform: rotate(45deg);
       top: 16px;
-      left: 15%;
-      right: 15%;
     }
 
     &:after {
       transform: rotate(-45deg);
+      width: 100%;
     }
   }
 }
+
+.social {
+  @extend %listreset;
+
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  margin-bottom: 20px;
+
+  li {
+    padding-right: 15px;
+
+    a > i {
+      font-size: 24px;
+
+      &:hover {
+        @include animate(color);
+
+        color: $yellow;
+      }
+    }
+  }
+}
+
+.header-holder {
+
+  .top-header {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;    
+    align-items: center;
+    background: $black;
+
+    .social {
+      margin-bottom: 0;
+      height: 100%;
+      padding-left: 20px; 
+    }
+
+    .box-sub-btn {
+      @extend %listreset;
+      padding-right: 18px;
+
+      display: none;
+
+      @include media('>=desktop') {
+        display: inline-block;
+        vertical-align: middle;
+        color: $white;      
+      }
+
+      li {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: -4px;
+        padding: 0 8px;
+
+        a:hover {
+          @include animate(color);
+          color: $yellow;
+        }
+      }
+    }
+
+    .btn-holder {
+      @extend %listreset;
+      
+      li {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: -4px;
+        height: 100%;
+
+        .btn-join {
+          display: block;
+          background: $yellow;
+          height: 100%;
+          text-transform: uppercase;
+          color: $white;
+          line-height: 50px;
+          padding: 0 20px;
+          outline: none;
+          border: none;
+
+          &:hover {
+            background: lighten($yellow, 10%);
+          }
+        }
+
+        .btn-sign {
+          display: block;
+          background: $red;
+          height: 100%;
+          text-transform: uppercase;
+          color: $white;
+          line-height: 50px;
+          padding: 0 20px;
+          outline: none;
+          border: none;
+
+          &:hover {
+            background: lighten($red, 10%);
+          }
+        }
+
+        .btn-search {
+          display: none;
+          padding: 0;
+          text-align: center;
+
+          @include media('>=tablet') {
+            display: block;
+            color: $white;
+            line-height: 50px;
+            width: 50px;
+            background: $blue;
+            outline: none;
+            border: none;
+          }
+
+          &:hover {
+            background: lighten($blue, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.main-header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 20px;
+
+  .logo {
+    display: none;
+
+    @include media('>=tablet') {
+      display: block;
+    }
+  }
+
+  .menu-main {
+
+    .box-btn {
+
+      li {
+        padding: 0 10px;
+        font-weight: $semibold;
+
+        &.active a {
+          color: $yellow;
+          font-weight: $black-font;
+        }
+
+        a:hover {
+          color: $yellow;
+          font-weight: $black-font;
+        }
+      }
+    }
+  }
+}
+
+.only-mobile {
+  display: block;
+
+  @include media('>=tablet') {
+    display: none !important;
+  }
+}
+

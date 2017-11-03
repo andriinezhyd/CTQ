@@ -6,6 +6,7 @@
 
 .container {
   @extend %clearfix;
+
   max-width: $max-width-center-container;
   padding: $padding-container;
   margin: 0 auto;
@@ -21,6 +22,8 @@
 	overflow: hidden;
 }
 
+
+
 .underline {
 	position: relative;
 	display: inline-block;
@@ -34,9 +37,9 @@
 		width: calc(50px);
 		height: 4px;
 
-		.start-section & {
+		.meet-section & {
 			width: calc(50px);
-			height: 4px;
+			height: 2px;
 		}
 	}
 
@@ -74,17 +77,38 @@
 		width: 100%;
 		padding: 0 15px;
 
-		@include media ('>=tablet'){
+		@include media ('>=tablet') {
 			width: calc(50% - 15px);
 		}
 
 	.box-article {
 		border: 4px solid $blue-light;
+		font-size: $font-size-base-lagre;
+
+		h4 {
+			margin-bottom: 30px;
+		}
 
 		> a {
 			display: block;
 			height: 100%;
 			padding: 20px 25px;
+			color: $base-text-color;
+
+			&:hover {
+				color: inherit;
+				background: darken($base-background-color, 5%);
+			}
+
+			.more {
+				font-size: 10px;
+				font-weight: $black-font;
+				position: relative;
+
+				i {
+					margin-left: 3px;	
+				}			
+			}
 		}
 	}
 }
@@ -95,12 +119,17 @@
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	padding: 100px 0;
-	font-size: 81px;
+	font-size: 40px;
 	line-height: 1;
+
+	@include media('>=tablet') {
+		font-size: 81px;
+	}
 
 	h4 {
 		text-transform: uppercase;
 		font-weight: $bold;
+		margin-bottom: 30px;
 	}
 
 	p {
@@ -116,13 +145,16 @@
 }
 
 .box-posts {
-	padding: 75px 0 110px;
-	
-	.container {
-		// display: flex;
-		// flex-flow: row wrap;
-		// justify-content: space-between;
-		// align-content: space-between;
+	padding: 50px 0;
+
+	@include media('>=tablet') {
+		padding: 75px 0 110px;
+	}
+
+	.box-holder {
+		@include media('>=tablet') {
+			margin: 0 -15px;
+		}
 	}
 }
 
@@ -138,44 +170,212 @@
 		padding: 90px 0;
 		width: 100%;
 		height: 100%;
-		background: rgba($purple, .7);
+		background: rgba($purple, .8);
 		position: relative;
 
 		.container{
 			max-width: 490px;
 			margin: 0 auto;
 
+			h3 {
+				margin-bottom: 30px;
+			}
+
+			P {
+				margin-bottom: 75px;
+			}
+
 			.btn {
 				color: $white;
 				border-color: $white;
 				padding: 8px;
+
+				&:hover {
+					@include animate(color border-color);
+
+					color: $yellow;
+					border-color: $yellow;
+					background-color: transparent;
+				}
 			}
 		}
 
 		&:after {
+			display: block;	
 			position: absolute;
 			content: "";
-			right: 0;
-			bottom: 0;
+			bottom: -1px;
 			z-index: 1;
-			width: 0;
-			height: 0;
-			border-style: solid;
-			border-width: 3vw 50vw 0 0;
-			border-color: transparent $white transparent transparent ;
+			height: 32px;
+			width: 100%;
+			background: url(../images/decor-01.png) no-repeat;
+			background-size: cover;
+			background-position: 50% 50%;
+		}		
+	}
+}
+
+.history {
+	position: relative;
+	padding: 50px 0;
+
+	@include media('>=tablet') {
+		padding: 0;
+	}
+
+	&:before {
+
+		@include media('>=tablet') {
+			position: absolute;
+			background-size: cover;
+			background-position: 100% 100%;
+			height: 100%;
+			width: 66.6%;
+			content: "";
+			bottom: -35px;
+			right: 0;
+			background: url(../images/ctq_pattern_1.png) no-repeat;
+		}
+	}
+
+	.container {
+		@extend %clearfix;
+
+		position: relative;
+		text-align: center;
+
+		.image {
+			position: relative;
+			height: 100%;
+
+			@include media('>=tablet') {
+				float: left;
+				width: 33.3%;
+			}
+
+			img {
+				position: relative;
+				left: 0px;
+
+				@include media('>=tablet') {
+					left: -95px;
+				}
+			}
 		}
 
-		&:before {
-			position: absolute;
-			content: "";
-			left: 0;
-			bottom: 0;
-			z-index: 1;
-			width: 0;
-			height: 0;
-			border-style: solid;
-			border-width: 3vw 0 0 50vw;
-			border-color: transparent transparent transparent $white;
+		.text {
+			color: $blue;
+			text-align: left;
+			
+			@include media('>=tablet') {
+				font-size: 32px;
+				line-height: 40px;
+				float: right;
+				width: 66.6%;
+				padding: 130px 0 45px;
+			}
+
+			p {
+				margin-bottom: 30px;
+			}
+
+			a {
+				display: inline-block;
+				padding: 20px;
+				border: 2px solid $yellow;
+			}
+		}
+	}
+}
+
+.up-to-date {
+	padding: 85px 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	color: $white;
+
+	.container {
+		display: flex;
+		flex-flow: column wrap;
+		align-items: center;
+
+		@include media('>=tablet') {
+			flex-flow: row wrap;
+			justify-content: space-between;
+		}
+
+		h1 {
+			margin-bottom: 30px;
+
+			@include media('>=tablet') {
+				margin-bottom: 0;
+				font-weight: normal;
+				margin: 0 auto 30px;
+			}
+
+			@include media('>=desktop') {
+				margin: 0 auto;
+			}
+		}
+
+		.form-email {
+			margin: 0 auto;
+		}
+
+
+		.input-holder {
+			max-width: 488px;
+			text-align: center;
+					
+
+			input[type='search'] {
+				@include placeholder {
+					color: $white;
+				}
+				display: inline-block;
+
+				background: $blue;
+				color: $white;
+				border: 1px solid $blue-dark;
+				font-weight: $light;
+				line-height: 47px;
+				height: 47px;
+				margin-right: -2px;
+				width: 100%;
+				margin-bottom: 20px;
+				outline: none;
+
+				@include media('>=tablet') {
+					width: calc(100% - 150px);
+					min-width: 335px;
+					margin-bottom: 0;
+				}
+
+				&:focus {
+					border-color: darken($blue-dark, 10%);
+				}
+			}
+
+			button {
+				display: inline-block;
+				background: $black;
+				border: none;
+				font-weight: $normal;
+				text-transform: uppercase;
+				font-size: 13px;
+				color: $white;
+				line-height: 47px;
+				height: 100%;
+				padding: 0 35px;
+				outline: none;
+
+				&:hover {
+					@include animate(color);
+
+					color: $yellow;
+				}
+			}
 		}
 	}
 }

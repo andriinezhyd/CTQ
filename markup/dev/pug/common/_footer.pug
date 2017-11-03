@@ -2,23 +2,25 @@ footer#footer
 	.container
 		.main-footer
 			.box-holder
-				h1.title.underline RECENT NEWS
+				h4.title.underline.line-white RECENT NEWS
 				.news
 					span.date 07/12/17
-					p This is a headline for a recent news post about CTQ. This is not a blog post.
+					span.link: a(href="#").yellow-color This is a headline for a recent news post about CTQ. This is not a blog post.
 				.news
 					span.date 07/12/17
-					p This is a headline for a recent news post about CTQ. This is not a blog post.
+					span.link: a(href="#").yellow-color This is a headline for a recent news post about CTQ. This is not a blog post.
 			.box-holder
-				h1.title.underline FOLLOW US
-				p @TEACHINGQUALITY
-				| Our country has a 
-				strong troubled 
-				| history of dealing with #bilingualism, @daniellitaa says in @edweekteacher… twitter.com/iweb/status/8…
+				h4.title.underline.line-white FOLLOW US
+				
+				span.link: a(href="#").yellow-color @TEACHINGQUALITY
+				p Our country has a troubled history of dealing with #bilingualism, @daniellitaa says in @edweekteacher… twitter.com/iweb/status/8…
 			.box-holder
-				h1.title.underline CONNECT WITH US
+				h4.title.underline.line-white CONNECT WITH US
 				include ../template/_social
-				include ../template/_contacts
+				address.contact-links
+					span: a(href="tel:9199133000") (919) 913 3000
+					span: a(href="mailto:contactus@teachingquality.com").yellow-color.link.ellipsis contactus@teachingquality.com
+					span: a(href="#") 605 West Main St., Suite 207 Carrboro, NC 27510
 		.bottom-footer
 			ul.copyright
 				li: a(href="#") &copy; 2017 Center for Teaching Quality. All rights reserved.

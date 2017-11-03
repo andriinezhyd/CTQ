@@ -2,8 +2,11 @@ header#header
 	.header-holder
 		.top-header
 			include ../template/_social
-			include ../template/_buttons-header
 			ul.btn-holder
+				ul.box-sub-btn
+					li: a(href="#") DONATE
+					li: a(href="#") CONTACT
+					li: a(href="#") CAREERS
 				li: a.btn.btn-join(href="#") join
 				li: a.btn.btn-sign(href="#") sign in
 				li: a.btn.btn-search(href="#"): i.icon-search
@@ -12,24 +15,30 @@ header#header
 			//- 	li: a(href="#") MY PROFILE
 			//- 	li: a(href="#") MY DASHBOARD
 		.main-header
-			strong.logo: a(href="#")
+			strong.logo: a(href="#" title="Center For Teaching Quality")
 				img(src="images/logo.svg" alt="Center For Teaching Quality" width="233" height="65")
-			strong.logo-sticky: a(href="#")
+			strong.logo-sticky.only-mobile: a(href="#" title="Center For Teaching Quality")
 				img(src="images/logo-small.svg" alt="Center For Teaching Quality" width="47" height="25")
 			nav#nav
 				a(href="#").nav-opener: span Open
 				.nav-drop
 					//- - var curentClass = 'home' //- past in curent page
-					.box-search
+					.box-search.only-mobile
 						form
 							input.form-control(type='search', placeholder='Search...')
 							button(type='submit'): i.icon-search
 					.menu-main
-						ul
+						ul.box-btn
 							li(class={active: curentClass === 'about'}): a(href="#") ABOUT CTQ
 							li(class={active: curentClass === 'ourWork'}): a(href="#") OUR WORK
 							li(class={active: curentClass === 'services'}): a(href="#") OUR SERVICES
 							li(class={active: curentClass === 'blog'}): a(href="#") BLOG
-						include ../template/_buttons-header
-						include ../template/_contacts
+						ul.box-sub-btn.only-mobile
+							li: a(href="#") DONATE
+							li: a(href="#") CONTACT
+							li: a(href="#") CAREERS
+						address.contact-links.only-mobile
+							span: a(href="tel:9199133000") (919) 913 3000
+							span: a(href="mailto:contactus@teachingquality.com").yellow-color.link.ellipsis contactus@teachingquality.com
+							span: a(href="#") 605 West Main St., Suite 207 Carrboro, NC 27510
 
