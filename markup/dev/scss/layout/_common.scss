@@ -20,3 +20,162 @@
 	height: 1px;
 	overflow: hidden;
 }
+
+.underline {
+	position: relative;
+	display: inline-block;
+
+	&:after {
+		content: '';
+		margin-top: 10px;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: calc(50px);
+		height: 4px;
+
+		.start-section & {
+			width: calc(50px);
+			height: 4px;
+		}
+	}
+
+	&.line-black {
+		&:after {
+			background: $black;
+		}
+	}
+
+	&.line-white {
+		&:after {
+			background: $white;
+		}
+	}
+
+	&.line-yellow {
+		&:after {
+			background: $yellow;
+		}
+	}
+
+	&.line-center {
+		&:after {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+}
+
+.link-holder {
+		display: inline-block;
+		vertical-align: top;
+		margin-right: -4px;
+		margin-bottom: 30px;
+		width: 100%;
+		padding: 0 15px;
+
+		@include media ('>=tablet'){
+			width: calc(50% - 15px);
+		}
+
+	.box-article {
+		border: 4px solid $blue-light;
+
+		> a {
+			display: block;
+			height: 100%;
+			padding: 20px 25px;
+		}
+	}
+}
+
+.start-section {
+	color: $white;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	padding: 100px 0;
+	font-size: 81px;
+	line-height: 1;
+
+	h4 {
+		text-transform: uppercase;
+		font-weight: $bold;
+	}
+
+	p {
+		margin-bottom: 50px;
+	}
+
+	.btn {
+		text-transform: uppercase;
+		font-size: 13px;
+		padding: 20px;
+		color: $white;
+	}
+}
+
+.box-posts {
+	padding: 75px 0 110px;
+	
+	.container {
+		// display: flex;
+		// flex-flow: row wrap;
+		// justify-content: space-between;
+		// align-content: space-between;
+	}
+}
+
+.meet-section {
+	color: $white;
+	text-align: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	position: relative;
+
+	.img-overlay{
+		padding: 90px 0;
+		width: 100%;
+		height: 100%;
+		background: rgba($purple, .7);
+		position: relative;
+
+		.container{
+			max-width: 490px;
+			margin: 0 auto;
+
+			.btn {
+				color: $white;
+				border-color: $white;
+				padding: 8px;
+			}
+		}
+
+		&:after {
+			position: absolute;
+			content: "";
+			right: 0;
+			bottom: 0;
+			z-index: 1;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 3vw 50vw 0 0;
+			border-color: transparent $white transparent transparent ;
+		}
+
+		&:before {
+			position: absolute;
+			content: "";
+			left: 0;
+			bottom: 0;
+			z-index: 1;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 3vw 0 0 50vw;
+			border-color: transparent transparent transparent $white;
+		}
+	}
+}

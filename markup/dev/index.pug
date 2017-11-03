@@ -2,9 +2,9 @@ include pug/common/_head
 	block content
 		include pug/common/_header
 		main#main(role="main")
-			section.call-action
+			section.start-section(style="background-image: url(images/bg-img-01.jpg);")
 				.container
-					h1.title About CTQ
+					h4.title.underline.line-white About CTQ
 					p Ipsum dolor sit amet con sect etur adipi sicing elit
 					a.btn(href="#") ABOUT CALL TO ACTION
 			section.box-posts
@@ -13,11 +13,12 @@ include pug/common/_head
 					+article("OUR CLIENTS", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, duis aute irure dolor.")
 					+article("OUR PARTNERS", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, duis aute irure dolor.")
 					+article("OUR BOOKS", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, duis aute irure dolor.")
-			section
-				.container
-					h1.title Meet the CTQ Team
-					p Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-					a.btn.more(href="#") LEARN MORE
+			section.meet-section(style="background-image: url(images/bg-img-02.jpg);")
+				.img-overlay
+					.container
+						h3.title.underline.line-center.line-white Meet the CTQ Team
+						p Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						a.btn.more(href="#") LEARN MORE
 			section
 				.container
 					.image
