@@ -85,8 +85,7 @@ mixin imgMask(obj)
 mixin article(title, text)
 	.link-holder
 		.box-article
-			a(href="#")
-				h4.title.underline.line-yellow= title
-				p= text
-				span.more.link.yellow-color LEARN MORE
-					i.icon-next
+			h4.title.underline.line-yellow: a(href="#")= title
+			p= text
+			span.more.link.yellow-color: a(href="#") LEARN MORE
+				i.icon-next

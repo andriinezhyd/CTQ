@@ -5,13 +5,16 @@
 
 	.main-footer {
 		margin: 0 -15px;
-		padding-bottom: 90px;
+		
+		@include media('>=tablet') {
+			padding-bottom: 90px;
+		}
 
 		.box-holder {
 			display: inline-block;
 			vertical-align: top;
 			margin-right: -4px;
-			font-size: 21px;
+			
 			font-weight: $light;
 			line-height: 25px;
 			width: 100%;
@@ -24,17 +27,31 @@
 
 			@include media('>=desktop') {
 				width: 33.3%;
+				font-size: 21px;
 			}
 
 			h4 {
+				display: block;
 				margin-bottom: 30px;
+				text-transform: uppercase;
+			}
+
+			.news {
+				margin-bottom: 20px;
 			}
 
 			a {
+				display: block;
 				color: $white;
+				white-space: normal;
+
+				&:hover {
+					opacity: .8;
+				}
 			}
 
 			.date {
+				display: block;
 				font-weight: $bold;
 				font-size: 13px;
 			}
@@ -42,7 +59,7 @@
 			.contact-links {
 				font-style: normal;
 				a {
-					display: inline-block;
+					display: block;
 				}
 			}
 		}
@@ -54,33 +71,89 @@
 		color: $gray-dark;
 		margin: 0 -9999px;
 		padding: 0 9999px;
+		font-size: 14px;
 
-		.copyright {
-			@extend %listreset;
-
-			text-align: center;
+		@include media('>=tablet') {
 			
-			li {
-				display: inline-block;
-				font-size: 14px;
-				padding: 18px 0;
+			display: flex;
+			justify-content: center;
+		}
 
-				&:last-child a{
-					border-right: none;
+		.copyright-holder {
+			display: block;
+			text-align: center;
+			padding: 18px 0;
+
+			@include media('>=tablet') {
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: -4px;
+			}
+
+			.copyright {
+				color: $gray-dark;
+				
+				@include media('>=tablet') {
+					border-right: 1px solid $gray-dark;
+					padding: 0 15px;
 				}
 
-				a {
-					padding: 0 15px;
-					color: $gray-dark;
-					
-					@include media('>=phone') {
-						border-right: 1px solid $gray-dark;
-					}
+				.copyright-link {
+					color: inherit;
 
 					&:hover {
 						@include animate(color);
 
-						color: lighten($gray-dark, 10%);
+						color: darken($gray-dark, 20%);
+					}
+				}
+			}
+		}
+
+		.copyright-list {
+			@extend %listreset;
+			
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			text-align: center;
+			padding: 18px 0;
+
+			@include media('>=phone') {
+				flex-flow: row wrap;
+			}
+
+			@include media('>=tablet') {
+				text-align: left;
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: -4px;
+			}
+			
+			li {
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: -4px;
+				padding: 0 15px;
+				color: $gray-dark;
+
+				@include media('>=phone') {
+					border-right: 1px solid $gray-dark;
+				}
+
+				&:last-child {
+					border-right: none;
+				}
+
+				a {
+					color: inherit;
+					
+					
+
+					&:hover {
+						@include animate(color);
+
+						color: darken($gray-dark, 20%);
 					}
 				}
 			}
@@ -92,10 +165,7 @@
 	color: $yellow !important;
 }
 
-.link {
-	display: block !important;
-
-	&:hover {
-		opacity: .8;
-	}
+.link:hover {
+	opacity: .8;
 }
+

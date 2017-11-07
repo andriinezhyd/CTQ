@@ -3,42 +3,40 @@ header#header
 		.top-header
 			include ../template/_social
 			ul.btn-holder
-				ul.box-sub-btn
-					li: a(href="#") DONATE
-					li: a(href="#") CONTACT
-					li: a(href="#") CAREERS
+				li: ul.box-sub-btn
+						li: a(href="#").btn.sub-btn DONATE
+						li: a(href="#").btn.sub-btn CONTACT
+						li: a(href="#").btn.sub-btn CAREERS
 				li: a.btn.btn-join(href="#") join
 				li: a.btn.btn-sign(href="#") sign in
-				li: a.btn.btn-search(href="#"): i.icon-search
-			//- ul.login-menu
-			//- 	li: a(href="#") LOGOUT
-			//- 	li: a(href="#") MY PROFILE
-			//- 	li: a(href="#") MY DASHBOARD
+				li: form.box-search
+						input.form-control(type='search', placeholder='Search...')
+						button(type='submit').btn.btn-search: i.icon-search
+						a(href="#").btn.over-form: i.icon-search
+				//- a.btn.btn-search(href="#"): i.icon-search
 		.main-header
 			strong.logo: a(href="#" title="Center For Teaching Quality")
 				img(src="images/logo.svg" alt="Center For Teaching Quality" width="233" height="65")
-			strong.logo-sticky.only-mobile: a(href="#" title="Center For Teaching Quality")
-				img(src="images/logo-small.svg" alt="Center For Teaching Quality" width="47" height="25")
+			strong.logo-small.only-mobile: a(href="#" title="Center For Teaching Quality")
+				img(src="images/logo-small.png" alt="Center For Teaching Quality")
 			nav#nav
 				a(href="#").nav-opener: span Open
 				.nav-drop
-					//- - var curentClass = 'home' //- past in curent page
-					.box-search.only-mobile
-						form
-							input.form-control(type='search', placeholder='Search...')
-							button(type='submit'): i.icon-search
+					form.box-search.only-mobile
+						input.form-control(type='search', placeholder='Search...')
+						button(type='submit'): i.icon-search
 					.menu-main
 						ul.box-btn
-							li(class={active: curentClass === 'about'}): a(href="#") ABOUT CTQ
-							li(class={active: curentClass === 'ourWork'}): a(href="#") OUR WORK
-							li(class={active: curentClass === 'services'}): a(href="#") OUR SERVICES
-							li(class={active: curentClass === 'blog'}): a(href="#") BLOG
+							li(class={active: curentClass === ''}): a(href="#") abOUT CTQ
+							li(class={active: curentClass === ''}): a(href="#") OUR WORK
+							li(class={active: curentClass === ''}): a(href="#") OUR SERVICES
+							li(class={active: curentClass === ''}): a(href="#") BLOG
 						ul.box-sub-btn.only-mobile
-							li: a(href="#") DONATE
+							li: a(href="#") donate
 							li: a(href="#") CONTACT
 							li: a(href="#") CAREERS
 						address.contact-links.only-mobile
 							span: a(href="tel:9199133000") (919) 913 3000
-							span: a(href="mailto:contactus@teachingquality.com").yellow-color.link.ellipsis contactus@teachingquality.com
+							span: a(href="mailto:contactus@teachingquality.com").link contactus@teachingquality.com
 							span: a(href="#") 605 West Main St., Suite 207 Carrboro, NC 27510
 

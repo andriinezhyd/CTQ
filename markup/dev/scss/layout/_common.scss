@@ -5,8 +5,6 @@
 }
 
 .container {
-  @extend %clearfix;
-
   max-width: $max-width-center-container;
   padding: $padding-container;
   margin: 0 auto;
@@ -24,9 +22,9 @@
 
 
 
-.underline {
+.under-line {
 	position: relative;
-	display: inline-block;
+	// display: inline-block;
 
 	&:after {
 		content: '';
@@ -34,11 +32,11 @@
 		position: absolute;
 		top: 100%;
 		left: 0;
-		width: calc(50px);
+		width: 50px;
 		height: 4px;
 
 		.meet-section & {
-			width: calc(50px);
+			width: 50px;
 			height: 2px;
 		}
 	}
@@ -70,46 +68,55 @@
 }
 
 .link-holder {
-		display: inline-block;
-		vertical-align: top;
-		margin-right: -4px;
-		margin-bottom: 30px;
-		width: 100%;
-		padding: 0 15px;
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: 30px;
+	width: 100%;
+	padding: 0 15px;
 
-		@include media ('>=tablet') {
-			width: calc(50% - 15px);
-		}
+	@include media ('>=tablet') {
+		width: 50%;
+		margin-right: -5px;
+	}
 
 	.box-article {
 		border: 4px solid $blue-light;
 		font-size: $font-size-base-lagre;
+		color: $base-text-color;
+		padding: 20px 25px;
+		font-family: $base-font-sans-serif;
 
 		h4 {
+			text-transform: uppercase;
 			margin-bottom: 30px;
-		}
 
-		> a {
-			display: block;
-			height: 100%;
-			padding: 20px 25px;
-			color: $base-text-color;
-
-			&:hover {
+			a {
 				color: inherit;
-				background: darken($base-background-color, 5%);
-			}
 
-			.more {
-				font-size: 10px;
-				font-weight: $black-font;
-				position: relative;
+				&:hover {
+						@include animate(color);
 
-				i {
-					margin-left: 3px;	
-				}			
+						color: darken($base-text-color, 10%);
+					}
 			}
 		}
+
+		.more {
+			display: inline-block;
+			font-size: 10px;
+			font-weight: $black-font;
+			position: relative;
+			text-transform: uppercase;
+			
+			a {
+				color: $yellow;
+			}
+
+			i {
+				margin-left: 3px;
+			}
+		}
+
 	}
 }
 
@@ -146,9 +153,10 @@
 
 .box-posts {
 	padding: 50px 0;
+	position: relative;	
 
 	@include media('>=tablet') {
-		padding: 75px 0 110px;
+		padding: 75px 0 80px;
 	}
 
 	.box-holder {
@@ -156,39 +164,69 @@
 			margin: 0 -15px;
 		}
 	}
+
+	&:after,
+	&:before {
+		font-family: 'icomoon';
+		position: absolute;
+		left: 50%;
+		content: "\e908";
+		color: $gray2;
+		transform: translateX(-50%);
+		bottom: 40px;
+
+		@include media('>=desktop') {
+			bottom: 20px;
+		}
+	}
+
+	&:before {
+		content: "\e909";
+		top: 24px;
+		bottom: auto;
+	}
+
 }
 
 .meet-section {
-	color: $white;
-	text-align: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
+	color: $white;
+	text-align: center;
 	position: relative;
 
-	.img-overlay{
-		padding: 90px 0;
-		width: 100%;
-		height: 100%;
+	.container {
 		background: rgba($purple, .8);
-		position: relative;
 
-		.container{
+		.content-holder {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 90px 0;
 			max-width: 490px;
 			margin: 0 auto;
+			font-size: 21px;
+			line-height: 25px;
 
 			h3 {
+				font-size: 28px;
 				margin-bottom: 30px;
 			}
 
 			P {
-				margin-bottom: 75px;
+				// margin-bottom: 75px;
 			}
 
 			.btn {
+				width: 100%;
+				max-width: 120px;
+				text-transform: uppercase;
+				font-size: 13px;
+				line-height: 28px;
 				color: $white;
-				border-color: $white;
-				padding: 8px;
+				border: 2px solid $white;
+				padding: 0 8px;
 
 				&:hover {
 					@include animate(color border-color);
@@ -204,6 +242,7 @@
 			display: block;	
 			position: absolute;
 			content: "";
+			left: 0;
 			bottom: -1px;
 			z-index: 1;
 			height: 32px;
@@ -217,51 +256,56 @@
 
 .history {
 	position: relative;
-	padding: 50px 0;
+	padding: 50px 0 0;
 
 	@include media('>=tablet') {
-		padding: 0;
+		padding: 90px 0 0;
 	}
 
 	&:before {
 
 		@include media('>=tablet') {
-			position: absolute;
+			content: "";
+			width: 66.6%;
+			height: 517px;
 			background-image: url(../images/ctq_pattern_1.png);
 			background-size: cover;
 			background-repeat: no-repeat;
 			background-position: 0 100%;
-			height: 100%;
-			width: 66.6%;
-			content: "";
+			position: absolute;
 			bottom: -35px;
 			right: 0;
 		}
 	}
 
 	.container {
-		@extend %clearfix;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		
 
-		position: relative;
-		text-align: center;
+		@include media('>=tablet') {
+			flex-direction: row;
+			align-items: flex-end;
+		}
 
-		.image {
-			position: relative;
+		.image {	
+			display: flex;
+			justify-content: center;
 
 			@include media('>=tablet') {
-				display: inline-block;
-				vertical-align: bottom;
-				margin-right: -4px;
-				width: 33.3%;
+				width: calc(33.3% - 20px);
+				min-width: 307px;
+				padding: 0 20px 0 0;
+				order: 1;
 			}
 
 			img {
-				position: relative;
-				left: 0px;
-				bottom: 0;
+				width: 100%;
+				max-width: 287px;
 
-				@include media('>=tablet') {
-					left: -80px;
+				@include media('>=desktop') {
+					margin-left: -25px;
 				}
 			}
 		}
@@ -269,15 +313,14 @@
 		.text {
 			color: $blue;
 			text-align: left;
+			font-size: $font-size-base-lagre;
 			
 			@include media('>=tablet') {
-				display: inline-block;
-				vertical-align: bottom;
-				font-size: 32px;
+				font-size: 26px;
 				line-height: 40px;
 				width: 66.6%;
-				padding: 130px 0 45px;
-				margin-right: -4px;
+				padding: 0 0 45px;
+				order: 2;
 			}
 
 			p {
@@ -285,60 +328,66 @@
 			}
 
 			a {
-				display: inline-block;
-				padding: 20px;
+				display: block;
+				max-width: 234px;
+				padding: 18px 20px;
+				margin: 0 auto 20px;
 				border: 2px solid $yellow;
+				text-transform: uppercase;
+				text-align: center;
+
+				@include media('>=tablet') {
+					margin: 0;
+				}
 			}
 		}
 	}
 }
 
 .up-to-date {
-	padding: 85px 0;
+	padding: 50px 0;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	color: $white;
 
+	@include media('>=tablet') {
+		padding: 85px 0;
+	}
+
 	.container {
 		display: flex;
-		flex-flow: column wrap;
+		flex-direction: column;
+		justify-content: center;
 		align-items: center;
 
-		@include media('>=tablet') {
-			flex-flow: row wrap;
-			justify-content: space-between;
+		@include media('>=desktop') {
+			flex-direction: row;
+			justify-content: space-around;
 		}
 
 		h1 {
-			margin-bottom: 30px;
-
-			@include media('>=tablet') {
-				margin-bottom: 0;
-				font-weight: normal;
-				margin: 0 auto 30px;
-			}
-
 			@include media('>=desktop') {
-				margin: 0 auto;
+				font-weight: normal;
+				margin: 0;
 			}
 		}
 
 		.form-email {
-			margin: 0 auto;
-		}
-
-
-		.input-holder {
-			max-width: 488px;
+			
 			text-align: center;
+			position: relative;
+
+			@include media('>=tablet') {
+				width: 100%;
+				max-width: 488px;
+			}
 					
 
 			input[type='search'] {
 				@include placeholder {
 					color: $white;
 				}
-				display: inline-block;
 
 				background: $blue;
 				color: $white;
@@ -346,15 +395,15 @@
 				font-weight: $light;
 				line-height: 47px;
 				height: 47px;
-				margin-right: -2px;
 				width: 100%;
-				margin-bottom: 20px;
+				margin-bottom: 10px;
 				outline: none;
 
 				@include media('>=tablet') {
-					width: calc(100% - 150px);
-					min-width: 335px;
+					width: 100%;
+					min-width: 336px;
 					margin-bottom: 0;
+					padding-right: 162px;
 				}
 
 				&:focus {
@@ -363,7 +412,8 @@
 			}
 
 			button {
-				display: inline-block;
+				width: 152px;
+				text-align: center;
 				background: $black;
 				border: none;
 				font-weight: $normal;
@@ -371,9 +421,16 @@
 				font-size: 13px;
 				color: $white;
 				line-height: 47px;
-				height: 100%;
 				padding: 0 35px;
+				height: 47px;
 				outline: none;
+				
+
+				@include media('>=tablet') {
+					position: absolute;
+					top: 0;
+					right: 0;
+				}
 
 				&:hover {
 					@include animate(color);

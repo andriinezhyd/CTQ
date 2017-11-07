@@ -4,11 +4,14 @@
 
 $gray:               #6d6e71;
 $gray-dark:          #505151;
+$gray2:              #cfcfcf;
 $black:              #000;
+$black2:             #231f20;
 $white:              #fff;
 $blue:               #1a66af;
 $blue-dark:          #6f449b;
 $blue-light:         #f2f2f2;
+$blue-light2:         #b7d8f2;
 $yellow:             #f9a020;
 $red:                #c22228;
 $purple:             #a82e8f;
@@ -46,7 +49,7 @@ $vertical-rhythm:             $font-size-base + 4;
 $widget-margin:               20px;
 
 // Liks
-$base-link-color:             $white;
+$base-link-color:             $yellow;
 $base-link-hover-color:       $black;
 $text-decoration:             none;
 $text-decoration-hover:       none;
@@ -94,7 +97,7 @@ $btn-color:                         $yellow !default;
 $btn-background:                    transparent !default;
 $btn-border:                        1px solid $yellow;
 $btn-padding:                       4px 10px !default;
-$btn-font-size:                     $font-size-base - 2 !default;
+$btn-font-size:                     $font-size-base - 3 !default;
 $btn-line-height:                   $font-size-base + 2;
 // hover
 $btn-hover-background:              $yellow !default;
@@ -134,7 +137,7 @@ $select-line-height:                $input-line-height;
 
 // nav
 $nav-color:                         $black;
-$mobile-nav-drop-bg:                $black;
+$mobile-nav-drop-bg:                $white;
 $mobile-nav-drop-color:             $white;
 
 $animation-speed:                   0.3s;
