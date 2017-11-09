@@ -93,7 +93,7 @@ $unit-intervals: (
 ///
 /// @example scss - Disables support for media queries
 ///  $im-media-support: false;
-///  @include media('>=tablet') {
+///  @include media('≥tablet') {
 ///    .foo {
 ///      color: tomato;
 ///    }
@@ -113,7 +113,7 @@ $im-media-support: true !default;
 /// @example scss - This media query will show because it intercepts the static breakpoint
 ///  $im-media-support: false;
 ///  $im-no-media-breakpoint: 'desktop';
-///  @include media('>=tablet') {
+///  @include media('≥tablet') {
 ///    .foo {
 ///      color: tomato;
 ///    }
@@ -127,7 +127,7 @@ $im-media-support: true !default;
 /// @example scss - This media query will NOT show because it does not intercept the desktop breakpoint
 ///  $im-media-support: false;
 ///  $im-no-media-breakpoint: 'tablet';
-///  @include media('>=desktop') {
+///  @include media('≥desktop') {
 ///    .foo {
 ///      color: tomato;
 ///    }
@@ -145,7 +145,7 @@ $im-no-media-breakpoint: 'desktop' !default;
 ///  $im-media-support: false;
 ///  $im-no-media-breakpoint: 'desktop';
 ///  $im-no-media-expressions: ('screen');
-///  @include media('>=tablet', 'screen') {
+///  @include media('≥tablet', 'screen') {
 ///    .foo {
 ///      color: tomato;
 ///    }
@@ -160,7 +160,7 @@ $im-no-media-breakpoint: 'desktop' !default;
 ///  $im-media-support: false;
 ///  $im-no-media-breakpoint: 'desktop';
 ///  $im-no-media-expressions: ('screen');
-///  @include media('>=tablet', 'retina2x') {
+///  @include media('≥tablet', 'retina2x') {
 ///    .foo {
 ///      color: tomato;
 ///    }
@@ -259,10 +259,10 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
 ///
 /// @param {String} $expression - Expression to extract operator from
 ///
-/// @return {String} - Any of `>=`, `>`, `<=`, `<`, `≥`, `≤`
+/// @return {String} - Any of `≥`, `>`, `<=`, `<`, `≥`, `≤`
 ///
 @function get-expression-operator($expression) {
-  @each $operator in ('>=', '>', '<=', '<', '≥', '≤') {
+  @each $operator in ('≥', '>', '<=', '<', '≥', '≤') {
     @if str-index($expression, $operator) {
       @return $operator;
     }
@@ -534,7 +534,7 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
 ///  @include media('>phone', '<=tablet') { } 
 ///
 /// @example scss - With custom values
-///  @include media('>=358px', '<850px') { } 
+///  @include media('≥358px', '<850px') { } 
 ///
 /// @example scss - With set breakpoints with custom values
 ///  @include media('>desktop', '<=1350px') { } 
@@ -543,7 +543,7 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
 ///  @include media('retina2x') { } 
 ///
 /// @example scss - Mixing everything
-///  @include media('>=350px', '<tablet', 'retina3x') { } 
+///  @include media('≥350px', '<tablet', 'retina3x') { } 
 ///
 @mixin media($conditions...) {
   @if ($im-media-support and length($conditions) == 0) or 

@@ -3,21 +3,20 @@ header#header
 		.top-header
 			include ../template/_social
 			ul.btn-holder
-				li: ul.box-sub-btn
-						li: a(href="#").btn.sub-btn DONATE
-						li: a(href="#").btn.sub-btn CONTACT
-						li: a(href="#").btn.sub-btn CAREERS
+				li: ul
+					li: a(href="#").btn.sub-btn DONATE
+					li: a(href="#").btn.sub-btn CONTACT
+					li: a(href="#").btn.sub-btn CAREERS
 				li: a.btn.btn-join(href="#") join
 				li: a.btn.btn-sign(href="#") sign in
 				li: form.box-search
-						input.form-control(type='search', placeholder='Search...')
-						button(type='submit').btn.btn-search: i.icon-search
-						a(href="#").btn.over-form: i.icon-search
-				//- a.btn.btn-search(href="#"): i.icon-search
+					input.form-control(type='search', placeholder='Search...')
+					button(type='submit').btn.btn-search: i.icon-search
+					a(href="#").btn.over-form: i.icon-search
 		.main-header
-			strong.logo: a(href="#" title="Center For Teaching Quality")
+			div.logo: a(href="#" title="Center For Teaching Quality")
 				img(src="images/logo.svg" alt="Center For Teaching Quality" width="233" height="65")
-			strong.logo-small.only-mobile: a(href="#" title="Center For Teaching Quality")
+			div.logo-small.only-mobile: a(href="#" title="Center For Teaching Quality")
 				img(src="images/logo-small.png" alt="Center For Teaching Quality")
 			nav#nav
 				a(href="#").nav-opener: span Open
@@ -27,16 +26,16 @@ header#header
 						button(type='submit'): i.icon-search
 					.menu-main
 						ul.box-btn
-							li(class={active: curentClass === ''}): a(href="#") abOUT CTQ
-							li(class={active: curentClass === ''}): a(href="#") OUR WORK
-							li(class={active: curentClass === ''}): a(href="#") OUR SERVICES
-							li(class={active: curentClass === ''}): a(href="#") BLOG
+							li(class={active: curentClass === 'ABOUT'}): a(href="#" title="ABOUT CTQ") abOUT CTQ
+							li(class={active: curentClass === 'WORK'}): a(href="#" title="OUR WORK") OUR WORK
+							li(class={active: curentClass === 'SERVICES'}): a(href="#" title="OUR SERVICES") OUR SERVICES
+							li(class={active: curentClass === 'BLOG'}): a(href="#" title="BLOG") BLOG
 						ul.box-sub-btn.only-mobile
 							li: a(href="#") donate
 							li: a(href="#") CONTACT
 							li: a(href="#") CAREERS
 						address.contact-links.only-mobile
-							span: a(href="tel:9199133000") (919) 913 3000
+							span: a(href="tel:9199133000").link (919) 913 3000
 							span: a(href="mailto:contactus@teachingquality.com").link contactus@teachingquality.com
-							span: a(href="#") 605 West Main St., Suite 207 Carrboro, NC 27510
+							span: a(href="#").link 605 West Main St., Suite 207 Carrboro, NC 27510
 

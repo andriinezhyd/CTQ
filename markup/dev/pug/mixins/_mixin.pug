@@ -82,10 +82,10 @@ mixin imgMask(obj)
 				image(width='100%', height='100%', xlink:href='images/'+obj.mask)
 		image#the-mask(mask='url(#'+obj.idSvgMask+')', width='100%', height='100%', y='0', x='0', xlink:href='images/'+obj.imgName)
 
-mixin article(title, text)
+mixin article(obj)
 	.link-holder
 		.box-article
-			h4.title.underline.line-yellow: a(href="#")= title
-			p= text
-			span.more.link.yellow-color: a(href="#") LEARN MORE
+			h4.under-line.line-yellow: a(href="#")= obj.title
+			p= obj.text
+			span.btn-more.link.yellow-color: a(href="#") LEARN MORE
 				i.icon-next
